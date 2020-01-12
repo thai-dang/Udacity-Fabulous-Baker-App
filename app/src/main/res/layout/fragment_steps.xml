@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.steps.StepsFragment">
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/recipe_step_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/video_margin"
+        android:layout_marginRight="@dimen/video_margin"
+        android:layout_marginTop="@dimen/video_margin"
+        android:elevation="@dimen/video_elevation"
+        app:resize_mode="fit" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recipe_step_video"
+        android:layout_marginLeft="@dimen/video_margin"
+        android:layout_marginRight="@dimen/video_margin"
+        android:layout_marginTop="@dimen/video_margin"
+        android:elevation="@dimen/video_elevation"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/step_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            tools:text="Step description" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/steps_next_prev_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingEnd="@dimen/ingredients_padding"
+        android:paddingStart="@dimen/ingredients_padding">
+
+        <Button
+            android:id="@+id/next_step"
+            style="@style/StepsNavigationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableEnd="@drawable/ic_keyboard_arrow_right"
+            android:text="@string/next" />
+
+        <Button
+            android:id="@+id/prev_step"
+            style="@style/StepsNavigationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_keyboard_arrow_left"
+            android:text="@string/prev" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
